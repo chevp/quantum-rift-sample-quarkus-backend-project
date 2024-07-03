@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option objc_class_prefix = "HLW";
+
+package desert.ipcde17;
+
+message IdStruct {
+    string oid = 1;
+    map<string, Value> params = 2;
+}
+
+message Value {
+    oneof kind {
+        int32 int32_value = 1;
+        uint32 uint32_value = 2;
+        fixed32 fixed32_value = 3;
+        string string_value = 4;
+        double double_value = 5;
+        float float_value = 6;
+        bool bool_value = 7;
+    }
+}
+
+message NullValue {}
+
+service IPCStaticNodeService
+{
+    rpc ping(NullValue) returns (NullValue);
+    rpc init(IdStruct) returns (NullValue);
+    rpc insertNode(IdStruct) returns (NullValue);
+    rpc removeByNodeId(IdStruct) returns (NullValue);
+    rpc removeByStubContextId(IdStruct) returns (NullValue);
+    rpc getAllByStubContextId(IdStruct) returns (Value);
+    rpc getAll(NullValue) returns (Value);
+    rpc clear(NullValue) returns (NullValue);
+  
+    rpc subscribeByStubContextId(IdStruct) returns (stream Value);
+}
