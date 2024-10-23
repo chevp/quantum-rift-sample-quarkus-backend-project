@@ -1,4 +1,4 @@
-# GP4-Sample-Quarkus-Backend-Project
+# GP4 Sample Quarkus Backend Project
 
 Quarkus Java Backend Sample Project for GameProject 4.
 
