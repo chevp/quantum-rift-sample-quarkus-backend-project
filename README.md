@@ -1,6 +1,6 @@
-# GP4 Sample Quarkus Backend Project
+# Quantum Rift Sample Quarkus Backend Project
 
-Quarkus Java Backend Sample Project for GameProject 4.
+Quarkus Java Backend Sample Project for Quantum Rift.
 
 ## Quick Start
 
